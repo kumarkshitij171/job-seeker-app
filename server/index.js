@@ -57,7 +57,10 @@ const fileFilter = (_, file, cb) => {
         cb(new Error('Only PDF files are allowed'), false);
     }
 };
-const upload = multer({ storage, fileFilter });
+const upload = multer({
+    storage: multer.memoryStorage(),
+    fileFilter
+});
 
 
 app.get('/', (_, res) => {
