@@ -58,7 +58,7 @@ const fileFilter = (_, file, cb) => {
     }
 };
 const upload = multer({
-    storage: multer.memoryStorage(),
+    storage,
     fileFilter
 });
 
